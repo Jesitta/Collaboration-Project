@@ -1,0 +1,6 @@
+com\niit\letzchat\dao\BlogDAO.class
+com\niit\letzchat\model\User.class
+com\niit\letzchat\dao\UserDAO.class
+com\niit\letzchat\dao\UserDAOImpl.class
+com\niit\letzchat\config\ApplicationContextConfig.class
+com\niit\letzchat\dao\BlogDAOImpl.class

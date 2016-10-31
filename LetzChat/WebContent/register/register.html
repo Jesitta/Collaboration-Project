@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    
+    
+    <link rel="stylesheet" href="../resources/css/reg_normalize.css">
+
+  <link rel="stylesheet" href="resources/resource/css/bootstrap.min.css">
+
+<link rel="stylesheet"
+	href="resources/resource/css/font-awesome.min.css">
+<script src="resources/resource/js/jquery.min.js"></script>
+<script src="resources/resource/js/angular.min.js"></script>
+<script src="resources/resource/js/angular-route.js"></script>
+<script src="resources/resource/js/bootstrap.min.js"></script>
+        <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: #F15A5C;
+  font-family: "Roboto Slab", serif;
+  color: white;
+}
+
+.preload * {
+  transition: none !important;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: small;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  margin-bottom: 0.35em;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  border: none;
+  padding: 0.5em;
+  border-radius: 2px;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+input[type="text"]:focus, input[type="password"]:focus {
+  outline: none;
+  box-shadow: inset -1px -1px 3px rgba(0, 0, 0, 0.3);
+}
+
+button {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  border: none;
+  border-radius: 2px;
+  background-color: #7E5AF1;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  color: white;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+small {
+  font-size: 1em;
+}
+
+.login--login-submit {
+  float: right;
+}
+
+.login--container {
+  width: 600px;
+  background-color: #F15A5C;
+  margin: 0 auto;
+  position: relative;
+  top: 25%;
+}
+
+.login--toggle-container {
+  position: absolute;
+  background-color: #F15A5C;
+  right: 0;
+  line-height: 2.5em;
+  width: 50%;
+  height: 310px;
+  text-align: right;
+  cursor: pointer;
+  transform: perspective(1000px) translateZ(1px);
+  transform-origin: 0% 0%;
+  transition: all 1s cubic-bezier(0.06, 0.63, 0, 1);
+  backface-visibility: hidden;
+}
+.login--toggle-container .js-toggle-login {
+  font-size: 4em;
+  text-decoration: underline;
+}
+.login--active .login--toggle-container {
+  transform: perspective(1000px) rotateY(180deg);
+  background-color: #bc1012;
+}
+
+.login--left-container, .login--right-container {
+  float: left;
+  background-color: #F15A5C;
+  width: 50%;
+  height: 310px;
+  padding: 0.5em;
+}
+
+.login--left-container {
+  transform-origin: 100% 0%;
+  transform: perspective(1000px) rotateY(180deg);
+  transition: all 1s cubic-bezier(0.06, 0.63, 0, 1);
+  background-color: #bc1012;
+  backface-visibility: hidden;
+}
+.login--active .login--left-container {
+  transform: perspective(1000px) rotateY(0deg);
+  background-color: #F15A5C;
+}
+
+footer {
+  position: absolute;
+  bottom: 12px;
+  left: 20px;
+}
+
+    </style>
+
+    
+        <script src="../resources/js/reg_prefixfree.min.js"></script>
+
+    
+  </head>
+
+    <body ng-app="myApp" class="ng-cloak">
+     
+    <div class='preload login--container'  ng-controller="UserController as ctrl">
+    <form ng-submit="ctrl.submit()" name="myForm" class="form-horizontal">
+  <div class='login--form'>
+    <div class='login--left-container'>
+     
+      <label>First Name</label>
+     <input type="text" ng-model="ctrl.user.firstname" id="name"  placeholder="Name" required/>
+       <label>Email</label>
+      <input type="text" ng-model="ctrl.user.email" id="email" placeholder="Enter your Email" required/>
+       
+      <label>Password</label>
+     <input type="password" ng-model="ctrl.user.password" id="password" placeholder="Enter your password" required/>
+     
+    </div>
+     
+    
+    <div class='login--right-container'>
+      <label>Last Name</label>
+    <input type="text" ng-model="ctrl.user.lastname" id="lastname"  placeholder="Enter your Lastname" required/>
+       <label>Mobile Number</label>
+<input type="text" ng-model="ctrl.user.mobilenumber" id="mobilenmber" placeholder="Enter your Mobilenumber" required/>
+        <label>Gender</label>
+      <input type="text" ng-model="ctrl.user.gender" id="email"  placeholder="Enter your Gender" required/>
+      
+     
+   
+     <input type="submit"  value="Register" class="btn btn-primary btn-sm" >
+     
+    <!--   <button class='js-toggle-login login--login-submit'>Register</button> -->
+    </div>
+  </div>
+  <div class='login--toggle-container'>
+    <small>Hey you din register yet,</small>
+    <div class='js-toggle-login'>Register</div>
+   <small> here</small>
+</div></form></div>
+<!-- <footer>
+  <a class='twitter-follow-button' data-show-count='false' href='https://twitter.com/code_dependant'>
+    Follow @code_dependant
+  </a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</footer> -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+        <script src="./resources/js/reg_index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
